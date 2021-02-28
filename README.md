@@ -1,1 +1,1 @@
-https://spherical-horse.github.io/rsschool-cv/cv
+https://spherical-horse.github.io/rsschool-cv/
