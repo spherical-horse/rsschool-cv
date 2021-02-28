@@ -11,39 +11,141 @@
         body {
             max-width: 1000px;
             margin: auto;
-            text-align: center;
+            font-family: sans-serif;
         }
         
-        ul {
-            list-style-type: none;
-            padding-left: 0;
+        .avatar {
+            width: 120px;
+            margin-top: 20px;
+        }
+        
+        .footer-logo {
+            width: 50px;
+        }
+        
+        header {
+            display: flex;
+            align-items: center;
+        }
+        
+        section>p {
+            padding-left: 20px;
+        }
+        
+        p::first-letter {
+            padding-left: 15px;
+        }
+        
+        footer {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        main {
+            padding-left: 10px;
+            padding-right: 10px;
         }
     </style>
+    <script src="prism.js"></script>
+    <link rel="stylesheet" href="prism.css">
 </head>
 
 <body>
-    <h1>Artem Shevchuk</h1>
-    <h2>Contacts</h2>
-    <p>
-        email:
-        <a href="mailto:tema.shevchuk@gmail.com">
-      tema.shevchuk@gmail.com
-    </a>
-    </p>
-    <h2>About me</h2>
-    <p>
-        I'm working now as freelancer. My recent projects: Mango Office chrome extension client (JS) and server (AioHttp), integration module between custom CRM and modulkassa.ru (PHP), Google Maps and custom CRM integration (custom routing) and DaData and custom
-        CRM integration.
-    </p>
-    <h2>Skills</h2>
-    <ul>
-        <li>Javascript</li>
-        <li>HTML / CSS</li>
-        <li>PHP</li>
-        <li>Python / Django / AioHttp</li>
-    </ul>
-    <h2>English</h2>
-    <p>My English level is upper-intermediate.</p>
+    <header>
+        <figure>
+            <img class="avatar" src="avatar.png" alt="Аватар">
+        </figure>
+        <h1>Artem Shevchuk</h1>
+    </header>
+    <main>
+        <section>
+            <h2>Contacts</h2>
+            <ul>
+                <li>Email: <a href="mailto:tema.shevchuk@gmail.com">tema.shevchuk@gmail.com</a></li>
+                <li>Telegram: <a href="tg://resolve?domain=@tema_shevchuk">@tema_shevchuk</a></li>
+            </ul>
+        </section>
+        <section>
+            <h2>About me</h2>
+            <p>
+                I'm working now as freelancer. My recent projects: <a href="https://mango-office.ru/">Mango Office</a> Chrome extension client (JS) and server (<a href="https://github.com/aio-libs/aiohttp">AioHttp</a>), integration module between custom
+                CRM and <a href="https://modulkassa.ru">modulkassa.ru</a> (PHP), <a href="https://www.google.com/maps/">Google Maps</a> and custom CRM integration (custom routing, JS) and <a href="https://dadata.ru/">DaData</a> and custom CRM integration
+                (JS).
+            </p>
+        </section>
+        <section>
+            <h2>Skills</h2>
+            <ul>
+                <li>Javascript</li>
+                <li>HTML / CSS</li>
+                <li>PHP</li>
+                <li>Python / Django / AioHttp</li>
+            </ul>
+        </section>
+        <section>
+            <h2>English</h2>
+            <p>My English level is upper-intermediate.</p>
+        </section>
+        <section>
+            <h2>Education</h2>
+            <p>Peter the Great St. Petersburg Polytechnic University (2000 - 2006), engineer.</p>
+        </section>
+        <section>
+            <h2>Code example:</h2>
+            <p>CSS from this page. Added with <a href="https://prismjs.com/">Prism.js</a></p>
+            <pre>
+                <code class="language-css">
+    body {
+        max-width: 1000px;
+        margin: auto;
+        font-family: sans-serif;
+    }
+
+    .avatar {
+        width: 120px;
+        margin-top: 20px;
+    }
+
+    .footer-logo {
+        width: 50px;
+    }
+
+    header {
+        display: flex;
+        align-items: center;
+    }
+
+    section>p {
+        padding-left: 20px;
+    }
+
+    p::first-letter {
+        padding-left: 15px;
+    }
+
+    footer {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    main {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+                </code>
+            </pre>
+        </section>
+    </main>
+    <footer>
+        <a href="https://github.com/spherical-horse">github</a>
+        <a href="https://rs.school/js/">
+            <figure>
+                <img class="footer-logo" src="rs_school_js.svg" alt="Логотип RS School JS">
+            </figure>
+        </a>
+    </footer>
 </body>
 
 </html>
