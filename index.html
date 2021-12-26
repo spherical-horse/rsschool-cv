@@ -35,6 +35,10 @@
         p::first-letter {
             padding-left: 15px;
         }
+
+        .copyright {
+          padding-right: 30px;
+        }
         
         footer {
             display: flex;
@@ -93,52 +97,29 @@
         </section>
         <section>
             <h2>Code example:</h2>
-            <p>CSS from this page. Added with <a href="https://prismjs.com/">Prism.js</a></p>
+            <p>Highlighted with <a href="https://prismjs.com/">Prism.js</a></p>
             <pre>
-                <code class="language-css">
-    body {
-        max-width: 1000px;
-        margin: auto;
-        font-family: sans-serif;
-    }
-
-    .avatar {
-        width: 120px;
-        margin-top: 20px;
-    }
-
-    .footer-logo {
-        width: 50px;
-    }
-
-    header {
-        display: flex;
-        align-items: center;
-    }
-
-    section>p {
-        padding-left: 20px;
-    }
-
-    p::first-letter {
-        padding-left: 15px;
-    }
-
-    footer {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-
-    main {
-        padding-left: 10px;
-        padding-right: 10px;
+                <code class="language-javascript">
+    function sortArray(array) {
+      const res = [];
+      let oddCounter = 0;
+      const odds = array.filter(x => x % 2 !== 0).sort((a, b) => a - b);
+      for (let i = 0; i &lt; array.length; i++){
+        if (array[i] % 2 === 0){
+          res.push(array[i]);
+        } else {
+          res.push(odds[oddCounter]);
+          oddCounter++;
+        }
+      }
+      return res;
     }
                 </code>
             </pre>
         </section>
     </main>
     <footer>
+        <div class="copyright">© 2021</div>
         <a href="https://github.com/spherical-horse">github</a>
         <a href="https://rs.school/js/">
             <figure>
