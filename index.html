@@ -50,6 +50,17 @@
             padding-left: 10px;
             padding-right: 10px;
         }
+
+        .nav {
+          display: flex;
+          list-style-type: none;
+          padding-left: 0;
+          flex-wrap: wrap;
+        }
+
+        .nav-list-item {
+          padding-left: 10px;
+        }
     </style>
     <script src="prism.js"></script>
     <link rel="stylesheet" href="prism.css">
@@ -63,14 +74,24 @@
         <h1>Artem Shevchuk</h1>
     </header>
     <main>
-        <section>
+      <nav>
+        <ul class="nav">
+          <li class="nav-list-item"><a href="#contacts">Contacts</a></li>
+          <li class="nav-list-item"><a href="#about_me">About me</a></li>
+          <li class="nav-list-item"><a href="#skills">Skills</a></li>
+          <li class="nav-list-item"><a href="#english">English</a></li>
+          <li class="nav-list-item"><a href="#education">Education</a></li>
+          <li class="nav-list-item"><a href="#code_example">Code example</a></li>
+        </ul>
+      </nav>
+        <section id="contacts">
             <h2>Contacts</h2>
             <ul>
                 <li>Email: <a href="mailto:tema.shevchuk@gmail.com">tema.shevchuk@gmail.com</a></li>
                 <li>Telegram: <a href="tg://resolve?domain=@tema_shevchuk">@tema_shevchuk</a></li>
             </ul>
         </section>
-        <section>
+        <section id="about_me">
             <h2>About me</h2>
             <p>
                 I'm working now as freelancer. My recent projects: <a href="https://mango-office.ru/">Mango Office</a> Chrome extension client (JS) and server (<a href="https://github.com/aio-libs/aiohttp">AioHttp</a>), integration module between custom
@@ -78,7 +99,7 @@
                 (JS).
             </p>
         </section>
-        <section>
+        <section id="skills">
             <h2>Skills</h2>
             <ul>
                 <li>Javascript</li>
@@ -87,15 +108,15 @@
                 <li>Python / Django / AioHttp</li>
             </ul>
         </section>
-        <section>
+        <section id="english">
             <h2>English</h2>
             <p>My English level is upper-intermediate.</p>
         </section>
-        <section>
+        <section id="education">
             <h2>Education</h2>
             <p>Peter the Great St. Petersburg Polytechnic University (2000 - 2006), engineer.</p>
         </section>
-        <section>
+        <section id="code_example">
             <h2>Code example:</h2>
             <p>Highlighted with <a href="https://prismjs.com/">Prism.js</a></p>
             <pre>
