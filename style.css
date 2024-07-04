@@ -120,3 +120,16 @@ a {
   font-family: 'Pixelify Sans';
   font-size: 40px;
 }
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+}
+
+.copyright {
+  font-size: 64px;
+}
+
+.footer-logo {
+  width: 300px;
+}
