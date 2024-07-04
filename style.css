@@ -110,3 +110,8 @@ a {
   height: 2px;
   border-radius: 0;
 }
+
+.section-text {
+  font-size: 40px;
+  line-height: normal;
+}
