@@ -26,6 +26,12 @@ body {
 
 .header {
   display: flex;
+  flex-direction: column;
+  gap: 60px;
+}
+
+.header-container {
+  display: flex;
   align-items: center;
   justify-content: space-between;
 }
@@ -38,4 +44,26 @@ body {
 .header-text {
   font-size: 80px;
   text-align: center;
+}
+
+.i-love-frontend {
+  text-align: center;
+}
+
+.i-love-frontend-img {
+  width: 1330px;
+  height: 211px;
+  margin: 0 auto;
+}
+
+.nav {
+  list-style-type: none;
+  display: flex;
+  justify-content: space-between;
+  font-size: 36px;
+}
+
+.nav-list-item>a {
+  text-decoration: none;
+  color: #fff;
 }
