@@ -115,3 +115,8 @@ a {
   font-size: 40px;
   line-height: normal;
 }
+
+.code-example {
+  font-family: 'Pixelify Sans';
+  font-size: 40px;
+}
