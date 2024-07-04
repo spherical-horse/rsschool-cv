@@ -67,3 +67,46 @@ body {
   text-decoration: none;
   color: #fff;
 }
+
+.main {
+  display: flex;
+  gap: 60px;
+  flex-direction: column;
+}
+
+a {
+  color: #fff;
+}
+
+.section-title {
+  font-size: 64px;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.standard-list {
+  list-style-type: none;
+}
+
+.list-item {
+  padding-left: 25px;
+  font-size: 36px;
+  display: flex;
+  align-items: center;
+  line-height: 1.5;
+}
+
+.list-item::before {
+  content: '';
+  display: block;
+  width: 5px;
+  height: 5px;
+  background-color: #fff;
+  margin-right: 25px;
+}
+
+.list-item::marker {
+  width: 2px;
+  height: 2px;
+  border-radius: 0;
+}
