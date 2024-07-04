@@ -8,7 +8,6 @@ class App {
     fallingCharsCount = 30,
     animationStep = 70
   ) {
-    console.log(this.fallingCharsCount);
     this.canvas = document.getElementById(canvasId);
     this.canvas.width = window.innerWidth;
     this.canvas.height = window.innerHeight;
@@ -23,7 +22,6 @@ class App {
       textRendering: "optimizeSpeed",
     });
     this.ctx.font = this.font;
-    console.log(this.ctx.font);
     this.alphabet = this.getAlphabet();
     this.maxCharWidth = this.getMaxCharWidth();
     this.charHeight = this.getCharHeight();
