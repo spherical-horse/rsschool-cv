@@ -1,6 +1,41 @@
+@import url('./modern-normalize.css');
+
+@font-face {
+  font-family: "Pixelify Sans";
+  font-style: normal;
+  src: url(./assets/fonts/PixelifySans-VariableFont_wght.ttf);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
 body {
   background-color: #000;
   color: #fff;
   max-width: 1440px;
   margin: 0 auto;
+  font-family: 'Pixelify Sans', sans-serif;
+  font-weight: 400;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.h1 {
+  font-size: 120px;
+  font-weight: 400;
+}
+
+.header-text {
+  font-size: 80px;
+  text-align: center;
 }
