@@ -6,152 +6,142 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="robots" content="noindex">
+  <script defer src="script.js"></script>
   <title>CV</title>
-  <style>
-    body {
-      max-width: 1000px;
-      margin: auto;
-      font-family: sans-serif;
-    }
-
-    .avatar {
-      width: 120px;
-      margin-top: 20px;
-    }
-
-    .footer-logo {
-      width: 50px;
-    }
-
-    header {
-      display: flex;
-      align-items: center;
-    }
-
-    section>p {
-      padding-left: 20px;
-    }
-
-    p::first-letter {
-      padding-left: 15px;
-    }
-
-    .copyright {
-      padding-right: 30px;
-    }
-
-    footer {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    main {
-      padding-left: 10px;
-      padding-right: 10px;
-    }
-
-    .nav {
-      display: flex;
-      list-style-type: none;
-      padding-left: 0;
-      flex-wrap: wrap;
-    }
-
-    .nav-list-item {
-      padding-left: 10px;
-    }
-  </style>
-  <script src="prism.js"></script>
-  <link rel="stylesheet" href="prism.css">
+  <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-  <header>
-    <figure>
-      <img class="avatar" src="avatar.png" alt="Аватар">
-    </figure>
-    <h1>Artem Shevchuk</h1>
-  </header>
-  <main>
-    <nav>
-      <ul class="nav">
-        <li class="nav-list-item"><a href="#contacts">Contacts</a></li>
-        <li class="nav-list-item"><a href="#about_me">About me</a></li>
-        <li class="nav-list-item"><a href="#skills">Skills</a></li>
-        <li class="nav-list-item"><a href="#english">English</a></li>
-        <li class="nav-list-item"><a href="#education">Education</a></li>
-        <li class="nav-list-item"><a href="#code_example">Code example</a></li>
-      </ul>
-    </nav>
-    <section id="contacts">
-      <h2>Contacts</h2>
-      <ul>
-        <li>Email: <a href="mailto:tema.shevchuk@gmail.com">tema.shevchuk@gmail.com</a></li>
-        <li>Telegram: <a href="tg://resolve?domain=@tema_shevchuk">@tema_shevchuk</a></li>
-      </ul>
-    </section>
-    <section id="about_me">
-      <h2>About me</h2>
-      <p>
-        I'm working now as freelancer. My recent projects: <a href="https://mango-office.ru/">Mango Office</a> Chrome
-        extension client (JS) and server (<a href="https://github.com/aio-libs/aiohttp">AioHttp</a>), integration module
-        between custom
-        CRM and <a href="https://modulkassa.ru">modulkassa.ru</a> (PHP), <a href="https://www.google.com/maps/">Google
-          Maps</a> and custom CRM integration (custom routing, JS) and <a href="https://dadata.ru/">DaData</a> and
-        custom CRM integration
-        (JS).
-      </p>
-    </section>
-    <section id="skills">
-      <h2>Skills</h2>
-      <ul>
-        <li>Javascript</li>
-        <li>HTML / CSS</li>
-        <li>PHP</li>
-        <li>Python / Django / AioHttp</li>
-      </ul>
-    </section>
-    <section id="english">
-      <h2>English</h2>
-      <p>My English level is upper-intermediate.</p>
-    </section>
-    <section id="education">
-      <h2>Education</h2>
-      <p>Peter the Great St. Petersburg Polytechnic University (2000 - 2006), engineer.</p>
-    </section>
-    <section id="code_example">
-      <h2>Code example:</h2>
-      <p>Highlighted with <a href="https://prismjs.com/">Prism.js</a></p>
-      <pre>
-                <code class="language-javascript">
-    function sortArray(array) {
-      const res = [];
-      let oddCounter = 0;
-      const odds = array.filter(x =&gt; x % 2 !== 0).sort((a, b) =&gt; a - b);
-      for (let i = 0; i &lt; array.length; i++){
-        if (array[i] % 2 === 0){
-          res.push(array[i]);
-        } else {
-          res.push(odds[oddCounter]);
-          oddCounter++;
-        }
-      }
-      return res;
+  <div class="main-container">
+    <header class="header">
+      <div class="header-container">
+        <img class="avatar" src="./assets/img/avatar.svg" alt="Аватар">
+        <div class="h1-container">
+          <h1 class="h1">Artem Shevchuk</h1>
+          <p class="header-text">
+            frontend developer
+          </p>
+        </div>
+      </div>
+      <figure class="i-love-frontend">
+        <svg class="i-love-frontend-img" xmlns="http://www.w3.org/2000/svg">
+          <path
+            d="M355.932 178.64V57.2H375.952V37.18H437.992V57.2H458.232V79.2H435.792V59.4H378.152V97.02H418.192V118.8H378.152V178.64H355.932Z"
+            fill="white" />
+          <path d="M460.561 178.64V97.02H480.581V77H542.621V97.02H562.861V118.8H540.421V99H482.781V178.64H460.561Z"
+            fill="white" />
+          <path
+            d="M602.827 178.64V158.84H582.807V97.02H602.827V77H664.867V97.02H685.107V158.84H664.867V178.64H602.827ZM605.027 156.64H662.667V99H605.027V156.64Z"
+            fill="white" />
+          <path d="M711.713 178.64V77H793.773V97.02H814.013V178.64H791.573V99H733.933V178.64H711.713Z" fill="white" />
+          <path
+            d="M871.631 178.64V158.84H851.831V99H831.811V77H851.831V37.18H873.831V77H934.111V99H873.831V156.64H931.911V136.62H954.131V158.84H934.111V178.64H871.631Z"
+            fill="white" />
+          <path
+            d="M994.058 178.64V158.84H974.038V97.02H994.058V77H1056.1V97.02H1076.34V118.8H1053.9V99H996.258V116.6H1036.3V138.82H996.258V156.64H1053.9V136.4H1076.34V158.62H1056.1V178.64H994.058Z"
+            fill="white" />
+          <path d="M1102.94 178.64V77H1185V97.02H1205.24V178.64H1182.8V99H1125.16V178.64H1102.94Z" fill="white" />
+          <path
+            d="M1247.57 178.64V158.84H1227.55V97.02H1247.57V77H1307.63V37.18H1329.85V158.84H1309.61V178.64H1247.57ZM1249.77 156.64H1307.41V99H1249.77V156.64Z"
+            fill="white" />
+          <path
+            d="M0.146729 178.64V156.64H20.1667V59.4H0.146729V37.18H62.4067V59.4H42.1667V156.64H62.4067V178.64H0.146729Z"
+            fill="white" />
+          <path
+            d="M302.188 42.2V21.1H281.688V0H240.689V21.1H220.189V42.2H199.689V21.1H179.189V0H138.19V21.1H117.69V42.2H97.1901V105.5H117.69V126.6H138.19V147.7H158.689V168.8H179.189V189.9H199.689V211H220.189V189.9H240.689V168.8H261.188V147.7H281.688V126.6H302.188V105.5H322.688V42.2H302.188Z"
+            fill="#B10909" />
+        </svg>
+      </figure>
+      <nav>
+        <ul class="nav">
+          <li class="nav-list-item"><a href="#contacts">contacts</a></li>
+          <li class="nav-list-item"><a href="#about_me">about me</a></li>
+          <li class="nav-list-item"><a href="#skills">skills</a></li>
+          <li class="nav-list-item"><a href="#english">english</a></li>
+          <li class="nav-list-item"><a href="#education">education</a></li>
+          <li class="nav-list-item"><a href="#projects">projects</a></li>
+          <li class="nav-list-item"><a href="#code_example">code example</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main class="main">
+      <section id="contacts">
+        <h2 class="section-title">Contacts</h2>
+        <ul class="standard-list">
+          <li class="list-item">telegram:&nbsp;<a href="https://t.me/tema_shevchuk">@tema_shevchuk</a></li>
+          <li class="list-item">email:&nbsp;<a href="mailto:tema.shevchuk@gmail.com">tema.shevchuk@gmail.com</a></li>
+        </ul>
+      </section>
+      <section id="about_me">
+        <h2 class="section-title">About me</h2>
+        <p class=section-text>
+          I'm working now as freelancer. My recent projects: <a href="https://mango-office.ru/">Mango Office</a> Chrome
+          extension client (JS) and server (<a href="https://github.com/aio-libs/aiohttp">AioHttp</a>), integration
+          module
+          between custom
+          CRM and <a href="https://modulkassa.ru">modulkassa.ru</a> (PHP), <a href="https://www.google.com/maps/">Google
+            Maps</a> and custom CRM integration (custom routing, JS) and <a href="https://dadata.ru/">DaData</a> and
+          custom CRM integration
+          (JS).
+        </p>
+      </section>
+      <section id="skills">
+        <h2 class="section-title">Skills</h2>
+        <ul class="standard-list">
+          <li class="list-item">Javascript / Typescript</li>
+          <li class="list-item">HTML / CSS</li>
+          <li class="list-item">React</li>
+          <li class="list-item">PHP</li>
+          <li class="list-item">Python / Django / AioHttp</li>
+        </ul>
+      </section>
+      <section id="english">
+        <h2 class="section-title">English</h2>
+        <p class="section-text">My English level is upper-intermediate.</p>
+      </section>
+      <section id="education">
+        <h2 class="section-title">Education</h2>
+        <p class="section-text">Peter the Great St. Petersburg Polytechnic University (2000 - 2006), engineer.</p>
+      </section>
+      <section id="projects">
+        <h2 class="section-title">Projects</h2>
+        <ul class="standard-list">
+          <li class="list-item"><a href="/">My CV</a></li>
+        </ul>
+      </section>
+      <section id="code_example">
+        <h2 class="section-title">Code example:</h2>
+        <pre>
+                <code class="language-javascript code-example">
+function sortArray(array) {
+  const res = [];
+  let oddCounter = 0;
+  const odds = array.filter(x =&gt; x % 2 !== 0).sort((a, b) =&gt; a - b);
+  for (let i = 0; i &lt; array.length; i++){
+    if (array[i] % 2 === 0){
+      res.push(array[i]);
+    } else {
+      res.push(odds[oddCounter]);
+      oddCounter++;
     }
+  }
+  return res;
+}
                 </code>
             </pre>
-    </section>
-  </main>
-  <footer>
-    <div class="copyright">© 2021</div>
-    <a href="https://github.com/spherical-horse">github</a>
-    <a href="https://rs.school/js/">
-      <figure>
-        <img class="footer-logo" src="rs_school_js.svg" alt="Логотип RS School JS">
-      </figure>
-    </a>
-  </footer>
+      </section>
+    </main>
+    <footer class="footer">
+      <div class="copyright">© 2024</div>
+      <a href="https://github.com/spherical-horse">
+        <img src="./assets/img/github.svg" alt="github">
+      </a>
+      <a href="https://rs.school">
+        <img class="footer-logo" src="./assets/img/RS-logo-pixel.svg" alt="Логотип RS School JS">
+      </a>
+    </footer>
+  </div>
+  <canvas id="background"></canvas>
 </body>
 
 </html>
