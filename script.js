@@ -28,14 +28,73 @@ class App {
     this.textMatrix = this.getTextMatrix();
     this.fallingCharsPositionsY = Array(this.textMatrix.length);
     this.currentTime = new Date();
+    this.alphabetDictionary = this.getAlphabetDictionary();
   }
 
   init = () => {
     this.clearCanvas();
+    this.initSprite();
+    this.fillSprite();
     this.ctx.fillStyle = this.textColor;
-    this.drawFallingCharsLine(0, 1);
     this.fillPositionsY();
-    this.drawFallingChars();
+    this.drawFallingCharsFromSprite();
+  };
+
+  getAlphabetDictionary = () => {
+    return this.alphabet.reduce((acc, char, idx) => {
+      acc[char] = idx;
+      return acc;
+    }, {});
+  };
+
+  drawMatrix = () => {
+    this.textMatrix.forEach((column, columnIdx) => {
+      column.forEach((char, idx) => {
+        this.drawCharByMatrixPositionFromSprite(char, columnIdx, idx, 15);
+      });
+    });
+  };
+
+  initSprite = () => {
+    this.sprite = document.createElement("canvas");
+    this.sprite = new OffscreenCanvas(
+      this.maxCharWidth * this.fallingCharsCount,
+      this.charHeight * this.alphabet.length
+    );
+    this.ctxSprite = this.sprite.getContext("2d", { alpha: false });
+    this.ctxSprite.fillStyle = this.bgColor;
+    this.ctxSprite.fillRect(0, 0, this.ctxSprite.width, this.ctxSprite.height);
+  };
+
+  fillSprite = () => {
+    this.ctxSprite.font = this.font;
+    const opacityStep = this.textOpacity / this.fallingCharsCount;
+    this.alphabet.forEach((char, idx) => {
+      for (let i = 0; i < this.fallingCharsCount; i += 1) {
+        this.ctxSprite.fillStyle = this.getTextColorWithOpacity(
+          this.textOpacity - opacityStep * i
+        );
+        this.ctxSprite.fillText(
+          char,
+          i * this.maxCharWidth,
+          (idx + 1) * this.charHeight
+        );
+      }
+    });
+  };
+
+  drawCharByMatrixPositionFromSprite = (char, nx, ny, opacityStep) => {
+    this.ctx.drawImage(
+      this.sprite,
+      this.maxCharWidth * opacityStep,
+      this.alphabetDictionary[char] * this.charHeight,
+      this.maxCharWidth,
+      this.charHeight,
+      nx * this.maxCharWidth,
+      ny * this.charHeight,
+      this.maxCharWidth,
+      this.charHeight
+    );
   };
 
   drawCharByMatrixPosition = (char, nx, ny, opacity) => {
@@ -45,6 +104,26 @@ class App {
     const y = (ny + 1) * this.charHeight;
     this.ctx.fillStyle = this.getTextColorWithOpacity(opacity);
     this.ctx.fillText(char, x, y);
+  };
+
+  drawFallingCharsLineFromSprite = (nx, ny) => {
+    for (let i = 0; i < this.fallingCharsCount; i += 1) {
+      if (ny - i < this.textMatrix[0].length) {
+        this.drawCharByMatrixPositionFromSprite(
+          this.textMatrix[nx][ny - i],
+          nx,
+          ny - i,
+          i
+        );
+      } else {
+        this.drawCharByMatrixPositionFromSprite(
+          this.textMatrix[nx][ny - i - this.textMatrix[0].length],
+          nx,
+          ny - i - this.textMatrix[0].length,
+          i
+        );
+      }
+    }
   };
 
   drawFallingCharsLine = (nx, ny) => {
@@ -66,6 +145,25 @@ class App {
         );
       }
     }
+  };
+
+  drawFallingCharsFromSprite = () => {
+    const now = new Date();
+    if (now - this.currentTime > this.animationStep) {
+      this.clearCanvas();
+      this.fallingCharsPositionsY.forEach((y, idx) => {
+        this.drawFallingCharsLineFromSprite(idx, y);
+      });
+      for (let i = 0; i < this.fallingCharsPositionsY.length; i += 1) {
+        this.fallingCharsPositionsY[i] =
+          this.fallingCharsPositionsY[i] + 1 >
+          this.textMatrix[0].length + this.fallingCharsCount
+            ? this.fallingCharsCount
+            : this.fallingCharsPositionsY[i] + 1;
+      }
+      this.currentTime = now;
+    }
+    window.requestAnimationFrame(this.drawFallingChars);
   };
 
   drawFallingChars = () => {
@@ -106,7 +204,7 @@ class App {
   getTextMeasurings = (text) => {
     const textMeasurings = this.ctx.measureText(text);
     return {
-      height: textMeasurings.actualBoundingBoxAscent,
+      height: textMeasurings.fontBoundingBoxAscent,
       width: textMeasurings.width,
     };
   };
@@ -125,7 +223,7 @@ class App {
   };
 
   getCharHeight = () => {
-    return this.getTextMeasurings("T").height;
+    return Math.ceil(this.getTextMeasurings("T").height);
   };
 
   getWidthAndHeightSymbols = () => {
