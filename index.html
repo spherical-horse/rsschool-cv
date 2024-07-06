@@ -24,7 +24,8 @@
         </div>
       </div>
       <figure class="i-love-frontend">
-        <svg class="i-love-frontend-img" xmlns="http://www.w3.org/2000/svg">
+        <svg width="1330" height="211" viewBox="0 0 1330 211" class="i-love-frontend-img"
+          xmlns="http://www.w3.org/2000/svg">
           <path
             d="M355.932 178.64V57.2H375.952V37.18H437.992V57.2H458.232V79.2H435.792V59.4H378.152V97.02H418.192V118.8H378.152V178.64H355.932Z"
             fill="white" />
@@ -111,22 +112,28 @@
       </section>
       <section id="code_example">
         <h2 class="section-title">Code example:</h2>
-        <pre>
+        <p class="section-text">
+          This code snippet draws digital rain effect.
+        </p>
+        <pre class="pre-code">
                 <code class="language-javascript code-example">
-function sortArray(array) {
-  const res = [];
-  let oddCounter = 0;
-  const odds = array.filter(x =&gt; x % 2 !== 0).sort((a, b) =&gt; a - b);
-  for (let i = 0; i &lt; array.length; i++){
-    if (array[i] % 2 === 0){
-      res.push(array[i]);
-    } else {
-      res.push(odds[oddCounter]);
-      oddCounter++;
+drawFallingCharsFromSprite = () => {
+  const now = new Date();
+  if (now - this.currentTime > this.animationStep) {
+      this.clearCanvas();
+      this.fallingCharsPositionsY.forEach((y, idx) =&gt; {
+        this.drawFallingCharsLineFromSprite(idx, y);
+    });
+    for (let i = 0; i < this.fallingCharsPositionsY.length; i +=1) {
+      this.fallingCharsPositionsY[i]=this.fallingCharsPositionsY[i] + 1 &gt;
+      this.textMatrix[0].length + this.fallingCharsCount
+      ? this.fallingCharsCount
+      : this.fallingCharsPositionsY[i] + 1;
     }
+    this.currentTime = now;
   }
-  return res;
-}
+  window.requestAnimationFrame(this.drawFallingChars);
+};
                 </code>
             </pre>
       </section>
