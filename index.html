@@ -111,22 +111,28 @@
       </section>
       <section id="code_example">
         <h2 class="section-title">Code example:</h2>
+        <p class="section-text">
+          This code snippet draws digital rain effect.
+        </p>
         <pre>
                 <code class="language-javascript code-example">
-function sortArray(array) {
-  const res = [];
-  let oddCounter = 0;
-  const odds = array.filter(x =&gt; x % 2 !== 0).sort((a, b) =&gt; a - b);
-  for (let i = 0; i &lt; array.length; i++){
-    if (array[i] % 2 === 0){
-      res.push(array[i]);
-    } else {
-      res.push(odds[oddCounter]);
-      oddCounter++;
+drawFallingCharsFromSprite = () => {
+  const now = new Date();
+  if (now - this.currentTime > this.animationStep) {
+      this.clearCanvas();
+      this.fallingCharsPositionsY.forEach((y, idx) =&gt; {
+        this.drawFallingCharsLineFromSprite(idx, y);
+    });
+    for (let i = 0; i < this.fallingCharsPositionsY.length; i +=1) {
+      this.fallingCharsPositionsY[i]=this.fallingCharsPositionsY[i] + 1 &gt;
+      this.textMatrix[0].length + this.fallingCharsCount
+      ? this.fallingCharsCount
+      : this.fallingCharsPositionsY[i] + 1;
     }
+    this.currentTime = now;
   }
-  return res;
-}
+  window.requestAnimationFrame(this.drawFallingChars);
+};
                 </code>
             </pre>
       </section>
