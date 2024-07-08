@@ -1,0 +1,167 @@
+@import url('./modern-normalize.css');
+
+@font-face {
+  font-family: "Pixelify Sans";
+  font-style: normal;
+  src: url(./assets/fonts/PixelifySans-VariableFont_wght.ttf);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #000;
+  color: #fff;
+  max-width: 1440px;
+  margin: 0 auto;
+  font-family: 'Pixelify Sans', sans-serif;
+  font-weight: 400;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+}
+
+.header-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.h1 {
+  font-size: 112px;
+  font-weight: 400;
+  text-align: center;
+}
+
+.header-text {
+  font-size: 80px;
+  text-align: center;
+}
+
+.i-love-frontend {
+  text-align: center;
+}
+
+.i-love-frontend-img {
+  width: 100%;
+  margin: 0 auto;
+}
+
+.nav {
+  list-style-type: none;
+  display: flex;
+  justify-content: space-between;
+  font-size: 36px;
+  flex-wrap: wrap;
+}
+
+.nav-list-item>a {
+  text-decoration: none;
+  color: #fff;
+}
+
+.main {
+  display: flex;
+  gap: 60px;
+  flex-direction: column;
+}
+
+a {
+  color: #fff;
+}
+
+.section-title {
+  font-size: 64px;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.standard-list {
+  list-style-type: none;
+}
+
+.list-item {
+  padding-left: 25px;
+  font-size: 36px;
+  display: flex;
+  align-items: center;
+  line-height: 1.5;
+}
+
+.list-item::before {
+  content: '';
+  display: block;
+  width: 5px;
+  height: 5px;
+  background-color: #fff;
+  margin-right: 25px;
+}
+
+.list-item::marker {
+  width: 2px;
+  height: 2px;
+  border-radius: 0;
+}
+
+.section-text {
+  font-size: 40px;
+  line-height: normal;
+}
+
+.pre-code {
+  overflow: scroll;
+  -webkit-overflow-scrolling: touch;
+}
+
+.pre-code::-webkit-scrollbar {
+  display: none;
+}
+
+.code-example {
+  font-family: 'Pixelify Sans';
+  font-size: min(2.7vw, 40px);
+}
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.copyright {
+  font-size: 64px;
+}
+
+.footer-logo {
+  width: 300px;
+}
+
+.main-container {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+}
+
+#background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  width: 100vw;
+  height: 100vh;
+}
