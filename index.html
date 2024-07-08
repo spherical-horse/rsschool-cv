@@ -124,7 +124,7 @@ drawFallingCharsFromSprite = () => {
       this.fallingCharsPositionsY.forEach((y, idx) =&gt; {
         this.drawFallingCharsLineFromSprite(idx, y);
     });
-    for (let i = 0; i < this.fallingCharsPositionsY.length; i +=1) {
+    for (let i = 0; i &lt; this.fallingCharsPositionsY.length; i +=1) {
       this.fallingCharsPositionsY[i]=this.fallingCharsPositionsY[i] + 1 &gt;
       this.textMatrix[0].length + this.fallingCharsCount
       ? this.fallingCharsCount
